@@ -8,7 +8,7 @@ def get_top_tokens():
     exchange = ccxt.binance()
     
     # Fetch all markets
-    markets = exchange.load_markets()
+    exchange.load_markets()
     
     # Get all tickers
     tickers = exchange.fetch_tickers()

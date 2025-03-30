@@ -175,3 +175,13 @@ cython_debug/
 
 # data folder 
 ohlcv_data/
+cleaned_ohlcv_data/
+
+# log files - log in name, .txt
+*.txt
+*.log
+*.log.*
+*.log.*.*
+*.log.*.*.*
+*.log.*.*.*.*
+*.log.*.*.*.*.*
