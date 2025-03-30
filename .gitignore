@@ -185,3 +185,7 @@ cleaned_ohlcv_data/
 *.log.*.*.*
 *.log.*.*.*.*
 *.log.*.*.*.*.*
+
+
+# results 
+correlation_results/
