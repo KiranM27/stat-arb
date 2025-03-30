@@ -4,12 +4,17 @@ import pandas as pd
 import time
 import os
 import argparse
+import sys
 from datetime import datetime, timedelta
 from top_tokens import get_top_tokens
 
 def download_ohlcv_data(days=730, skip_existing=True):
+    # Get the project root directory (parent directory of the script)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)
+    
     # Create directory for data if it doesn't exist
-    data_dir = 'ohlcv_data'
+    data_dir = os.path.join(project_root, 'ohlcv_data')
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
     
@@ -27,7 +32,7 @@ def download_ohlcv_data(days=730, skip_existing=True):
     for i, token in enumerate(top_tokens):
         symbol = token['symbol']
         market_symbol = f"{symbol}/USDT"
-        filename = f"{data_dir}/{symbol}_USDT_daily.csv"
+        filename = os.path.join(data_dir, f"{symbol}_USDT_daily.csv")
         
         # Skip if file already exists and skip_existing is True
         if os.path.exists(filename) and skip_existing:
