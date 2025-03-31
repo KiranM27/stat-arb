@@ -189,3 +189,5 @@ cleaned_ohlcv_data/
 
 # results 
 correlation_results/
+cointegration_results/
+pair_plots/
